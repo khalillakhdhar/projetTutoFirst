@@ -26,6 +26,7 @@ private  TutorialDetailsRepository tutorialDetailsRepository;
 		List<Tutorial> tutorials=new ArrayList<>();
 		if(title==null)
 			tutorialRepository.findAll().forEach(tutorials::add); // ajout plus rapide par éléments
+		// tutorials= tutorialRepository.findAll(); (plus lente)
 		else
 			tutorialRepository.findByTitleContaining(title).forEach(tutorials::add);
 		
